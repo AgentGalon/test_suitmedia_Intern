@@ -56,7 +56,10 @@ class LoginViewModel {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(username: username),
+          builder: (context) => HomeScreen(
+            username: username,
+            selectedUserName: '',
+          ),
         ),
       );
     }

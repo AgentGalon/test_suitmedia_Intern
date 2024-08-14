@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+
 import 'package:test_suitmedia_intern/view/user_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final String username;
+  final String selectedUserName;
 
-  const HomeScreen({super.key, required this.username});
+  const HomeScreen({
+    super.key,
+    required this.username,
+    required this.selectedUserName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +76,14 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Align(
+          Align(
             alignment: Alignment.center,
             child: Text(
-              'Selected User Name',
-              style: TextStyle(
-                fontSize: 32.0,
+              selectedUserName.isEmpty
+                  ? 'Selected User Name'
+                  : selectedUserName,
+              style: const TextStyle(
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
