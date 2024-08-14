@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:test_suitmedia_intern/view/home_screen.dart';
 import 'package:test_suitmedia_intern/viewmodel/login_viewmodel.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
-  _LoginState createState() => _LoginState();
+  State<Login> createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
@@ -69,7 +68,7 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 36.0),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.9,
+                  width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       _viewModel.checkPalindrome(context);
@@ -90,15 +89,10 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 16.0),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.9,
+                  width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
+                      _viewModel.navigateToHomeScreen(context);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
